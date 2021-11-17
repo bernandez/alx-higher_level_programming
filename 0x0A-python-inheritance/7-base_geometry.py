@@ -1,24 +1,28 @@
 #!/usr/bin/python3
-"""
-a class BaseGeometry (based on 6-base_geometry.py)
-"""
+'''A module for working with geometry.
+'''
 
 
 class BaseGeometry:
-    """
-    a class BaseGeometry
-    """
+    '''The base class for all geometry objects.
+    '''
     def area(self):
-        """
-        raises an Exception with the message
-        """
-        raise Exception("area() is not implemented")
+        '''Computes the area of this geometry.
+
+        Returns:
+            float: The area of this geometry object.
+        '''
+        raise Exception('area() is not implemented')
 
     def integer_validator(self, name, value):
-        """
-        that validates value
-        """
+        '''Validates an object expected to be a positive and
+        non-zero integer object.
+
+        Args:
+            name (str): The name of the integer value.
+            value (int): The object to validate.
+        '''
         if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
+            raise TypeError('{:s} must be an integer'.format(name))
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError('{:s} must be greater than 0'.format(name))
